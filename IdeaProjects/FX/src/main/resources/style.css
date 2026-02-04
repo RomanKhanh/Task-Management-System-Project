@@ -1,0 +1,80 @@
+.myPane {
+    -fx-background-color: blue;
+}
+.TitleLabel{
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+.logo{
+    -fx-background-image: url("Image/logo-pornhub-inkythuatso-21-15-41-06.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: blue;
+}
+.LabelDN{
+    -fx-background-color: blue;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-max-width: Infinity;
+    -fx-border-radius: 8 8 0 0;
+}
+.login-box {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: black;
+
+}
+
+.vb2{
+    -fx-padding: 30;
+
+}
+
+
+
+.input-box {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #d0d7e2;
+    -fx-padding: 6 10 6 10;
+}
+
+.input {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 14px;
+}
+
+.icon {
+    -fx-font-size: 16px;
+}
+.Fake{
+    -fx-border-color: black;
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 6 10 6 10;
+}
+.tf{
+    -fx-border-color: white;
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+
+}
+
+.login-header {
+    -fx-background-color: blue;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.LabelDN {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+    -fx-padding: 10 0 10 0;
+    -fx-background-radius: 8 8 0 0;
+}

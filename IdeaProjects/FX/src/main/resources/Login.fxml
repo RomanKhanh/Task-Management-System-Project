@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main8.loginController">
+    <children>
+        <VBox alignment="CENTER" layoutX="110.0" layoutY="110.0" prefHeight="200.0" prefWidth="366.0" styleClass="login-box">
+            <children>
+
+                <StackPane styleClass="login-header">
+                    <children>
+                        <Label alignment="CENTER" styleClass="LabelDN" text="Đăng Nhập" />
+                    </children>
+                </StackPane>
+
+                <VBox spacing="10" styleClass="vb2">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="16.0" prefWidth="290.0" styleClass="Fake">
+                            <children>
+                                <Label text="👤" />
+                                <TextField prefHeight="33.0" prefWidth="267.0" promptText="Tên Đăng Nhập" styleClass="tf" fx:id="txtUser" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="16.0" prefWidth="290.0" styleClass="Fake">
+                            <children>
+                                <Label text="🔒" underline="true" />
+                                <PasswordField prefHeight="33.0" prefWidth="241.0" promptText="Mật Khẩu" styleClass="tf" fx:id="txtPass" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+            </children>
+        </VBox>
+        <Pane prefHeight="68.0" prefWidth="600.0" styleClass="myPane">
+            <children>
+                <Label layoutX="197.0" layoutY="12.0" prefHeight="45.0" prefWidth="206.0" styleClass="TitleLabel" text="HỆ THỐNG QUẢN LÝ TÁC VỤ" textAlignment="CENTER">
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                </Label>
+                <Pane prefHeight="68.0" prefWidth="92.0" styleClass="logo" />
+            </children>
+        </Pane>
+    </children>
+</AnchorPane>
