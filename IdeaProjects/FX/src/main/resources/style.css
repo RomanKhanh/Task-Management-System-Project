@@ -1,80 +1,86 @@
-.myPane {
-    -fx-background-color: blue;
-}
-.TitleLabel{
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-}
-.logo{
-    -fx-background-image: url("Image/logo-pornhub-inkythuatso-21-15-41-06.jpg");
+.AnchorPane-style {
+    -fx-background-image: url("Image/e603370ca564224f017fa54ba459955a.jpg");
     -fx-background-size: cover;
-    -fx-background-position: center;
-    -fx-background-repeat: no-repeat;
-    -fx-background-color: blue;
+    -fx-background-position: center center;
 }
-.LabelDN{
-    -fx-background-color: blue;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-max-width: Infinity;
-    -fx-border-radius: 8 8 0 0;
-}
+
 .login-box {
     -fx-background-color: white;
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
-    -fx-border-color: black;
-
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #333;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 4);
+    -fx-padding: 12;
 }
 
-.vb2{
-    -fx-padding: 30;
-
+.LabelDN {
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+    -fx-font-size: 22px;
 }
 
-
-
-.input-box {
+.Fake {
+    -fx-border-color: #666;
     -fx-background-color: white;
     -fx-background-radius: 8;
     -fx-border-radius: 8;
-    -fx-border-color: #d0d7e2;
-    -fx-padding: 6 10 6 10;
+    -fx-padding: 4 8 4 8;
+    -fx-spacing: 8;
 }
 
-.input {
-    -fx-background-color: transparent;
+.tf {
     -fx-border-color: transparent;
+    -fx-background-color: white;
     -fx-font-size: 14px;
+    -fx-pref-height: 28px;
 }
 
 .icon {
     -fx-font-size: 16px;
 }
-.Fake{
-    -fx-border-color: black;
-    -fx-background-color: white;
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
-    -fx-padding: 6 10 6 10;
-}
-.tf{
-    -fx-border-color: white;
-    -fx-background-color: white;
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
 
-}
-
-.login-header {
-    -fx-background-color: blue;
-    -fx-background-radius: 8 8 0 0;
-}
-
-.LabelDN {
+.my-button {
+    -fx-background-color: #90ee90;
     -fx-text-fill: white;
     -fx-font-weight: bold;
-    -fx-font-size: 16px;
-    -fx-padding: 10 0 10 0;
-    -fx-background-radius: 8 8 0 0;
+    -fx-font-size: 14px;
+    -fx-background-radius: 10;
+    -fx-pref-height: 30px;
+    -fx-cursor: hand;
+}
+
+.my-button:hover {
+    -fx-background-color: #7cfc00;
+}
+
+.my-button:pressed {
+    -fx-background-color: #0D47A1;
+}
+hbox1 {
+    -fx-padding: 0 100 0 0;
+}
+.VBox-Fields {
+    -fx-spacing: 15;
+}
+
+.vb2 {
+    -fx-padding: 25;
+    -fx-spacing: 10;
+}
+.register-link {
+    -fx-text-fill: #2196F3;
+    -fx-underline: true;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+}
+.register-link:hover {
+    -fx-text-fill: #0d47a1;
+}
+.Slogan {
+    -fx-font-weight: bold;
+    -fx-font-size: 23;
+    -fx-text-fill: white;
+}
+.hbox2 {
+    -fx-padding: 0 0 0 100;
 }
