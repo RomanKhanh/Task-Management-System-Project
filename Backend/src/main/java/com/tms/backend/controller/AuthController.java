@@ -4,7 +4,7 @@ import com.tms.backend.service.userService;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/auth")
+@RequestMapping("/api")
 public class AuthController {
 
     private final userService UserService;

@@ -1,7 +1,7 @@
 module com.example.fx {
     requires javafx.controls;
     requires javafx.fxml;
-
+    requires java.net.http;
 
     opens com.example.fx to javafx.fxml;
     exports com.example.fx;

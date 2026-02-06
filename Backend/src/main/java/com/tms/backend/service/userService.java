@@ -21,7 +21,7 @@ public class userService {
 
     public String login(String username, String password){
         for(User u : users){
-            if (u.username.equals(username)&&u.password.equals(password))
+            if (u.getUsername().equals(username)&&u.gerUserpassword().equals(password))
                 return "Đăng nhập thành công";
         }
         return "Đăng nhập thất bại";
