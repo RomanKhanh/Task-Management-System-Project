@@ -4,10 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.control.TextFormatter;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 public class loginController {
@@ -22,11 +19,16 @@ public class loginController {
     private Label lblRegister;
 
     @FXML
+    public Button lblHome;
+
+    @FXML
     public void initialize() {
         limitInput(txtUser, 30);
         limitInput(txtPass, 16);
 
         lblRegister.setOnMouseClicked(event -> openRegisterForm());
+
+        lblHome.setOnAction(event -> openHomeForm());
     }
 
     private void limitInput(TextField field, int maxLength) {
@@ -48,6 +50,25 @@ public class loginController {
 
             Stage stage = new Stage();
             stage.setTitle("Đăng ký tài khoản");
+            stage.setScene(new Scene(root));
+            stage.setMaximized(true);
+            stage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void openHomeForm() {
+        try {
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Home.fxml"));
+            Parent root = loader.load();
+            Stage current = (Stage) lblHome.getScene().getWindow();
+            current.close();
+
+            Stage stage = new Stage();
+            stage.setTitle("Trang Chủ");
             stage.setScene(new Scene(root));
             stage.setMaximized(true);
             stage.show();
