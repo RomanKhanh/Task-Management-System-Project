@@ -1,5 +1,5 @@
 .AnchorPane-style {
-    -fx-background-image: url("../Image/e603370ca564224f017fa54ba459955a.jpg");
+    -fx-background-image: url("../Image/ade94889319475e835f26231f1e490dd.jpg");
     -fx-background-size: cover;
     -fx-background-position: center center;
 }
@@ -8,7 +8,7 @@
     -fx-background-color: white;
     -fx-background-radius: 12;
     -fx-border-radius: 12;
-    -fx-border-color: #333;
+    -fx-border-color: #FFF;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 10, 0, 0, 4);
     -fx-padding: 12;
 }
@@ -28,7 +28,7 @@
     -fx-spacing: 8;
 }
 
-.tf {
+.Field {
     -fx-border-color: transparent;
     -fx-background-color: white;
     -fx-font-size: 14px;
@@ -56,9 +56,7 @@
 .my-button:pressed {
     -fx-background-color: #0D47A1;
 }
-hbox1 {
-    -fx-padding: 0 100 0 0;
-}
+
 .VBox-Fields {
     -fx-spacing: 15;
 }
