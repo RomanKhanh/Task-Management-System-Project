@@ -7,7 +7,7 @@
 <AnchorPane prefHeight="622.0" prefWidth="965.0" styleClass="AnchorPane-style" stylesheets="@../CSS/Login-Style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main8.loginController">
     <children>
 
-        <HBox AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <HBox alignment="CENTER" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
 
             <!-- PHẦN TRÁI: FORM LOGIN -->
             <StackPane prefWidth="500" styleClass="hbox1">
