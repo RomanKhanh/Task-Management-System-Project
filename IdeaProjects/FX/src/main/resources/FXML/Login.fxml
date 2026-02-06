@@ -14,7 +14,7 @@
                 <children>
                     <VBox alignment="CENTER" maxHeight="300" maxWidth="400" styleClass="login-box">
 
-                        <VBox alignment="CENTER" spacing="10" styleClass="vb2">
+                        <VBox alignment="CENTER" spacing="10" styleClass="Login-Content">
 
                             <Label styleClass="LabelDN" text="ĐĂNG NHẬP TÀI KHOẢN" />
                             <Label text="Email hoặc số điện thoại" />

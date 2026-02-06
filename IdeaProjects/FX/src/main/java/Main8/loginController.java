@@ -49,6 +49,7 @@ public class loginController {
             Stage stage = new Stage();
             stage.setTitle("Đăng ký tài khoản");
             stage.setScene(new Scene(root));
+            stage.setMaximized(true);
             stage.show();
 
         } catch (Exception e) {

@@ -18,6 +18,7 @@ public class Main extends Application {
             Parent root = FXMLLoader.load(this.getClass().getResource("/FXML/Login.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
+            primaryStage.setMaximized(true);
             primaryStage.show();
         } catch (Exception e) {
             System.out.println(e.getMessage());
