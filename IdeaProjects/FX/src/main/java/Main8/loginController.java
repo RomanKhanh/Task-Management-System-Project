@@ -41,7 +41,7 @@ public class loginController {
     private void openRegisterForm() {
         try {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Signup.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Register.fxml"));
             Parent root = loader.load();
             Stage current = (Stage) lblRegister.getScene().getWindow();
             current.close();

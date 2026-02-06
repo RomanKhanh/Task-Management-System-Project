@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="622.0" prefWidth="965.0" styleClass="AnchorPane-style" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main8.loginController">
+<AnchorPane prefHeight="622.0" prefWidth="965.0" styleClass="AnchorPane-style" stylesheets="@../CSS/Login-Style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main8.loginController">
     <children>
 
         <HBox AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
@@ -51,7 +51,7 @@
 
                     <ImageView fitHeight="200" fitWidth="300" preserveRatio="true">
                         <image>
-                            <Image url="@Image/ChatGPT Image Feb 5, 2026, 06_55_18 PM.png" />
+                            <Image url="@../Image/ChatGPT Image Feb 5, 2026, 06_55_18 PM.png" />
                         </image>
                     </ImageView>
 
