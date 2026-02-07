@@ -13,7 +13,7 @@ public class AuthController {
         this.UserService = UserService;
     }
 
-    @GetMapping("/register")
+    @PostMapping("/register")
     public String register(
             @RequestParam String username,
             @RequestParam String password) {

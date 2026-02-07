@@ -56,7 +56,7 @@
                         </VBox>
 
                         <Button text="Xác nhận"
-                                styleClass="my-button"/>
+                                styleClass="my-button" onAction="#handleRegister" />
                     </VBox>
 
                 </VBox>
