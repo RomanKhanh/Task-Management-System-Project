@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3d43193d-8eaa-45a3-a7f3-f161253cdaaf" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/.idea/IdeaProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/.idea/IdeaProjects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/mvnw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/mvnw.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/mvnw.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/Main8/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/java/Controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/Main8/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/java/Controller/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/Main8/ProjectsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/java/Controller/ProjectsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/Main8/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/java/Controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/Main8/SettingsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/java/Controller/SettingsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/Main8/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/java/Controller/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/com/example/fx/Main1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/com/example/fx/Main2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/com/example/fx/Main3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/com/example/fx/Main31.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/com/example/fx/Main4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/com/example/fx/Main5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/com/example/fx/Main6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/com/example/fx/Main7.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/com/example/fx/Mynumb.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/CSS/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/CSS/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/CSS/Login-Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/CSS/Login-Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/CSS/Register-Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/CSS/Register-Style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/FXML/Home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/FXML/Home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/FXML/Login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/FXML/Login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/FXML/Projects.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/FXML/Projects.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/FXML/Register.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/FXML/Register.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/FXML/Settings.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/FXML/Settings.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/Image/9c141a84b3e30347f106c98d7cab7d0b.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/Image/9c141a84b3e30347f106c98d7cab7d0b.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/Image/ChatGPT Image Feb 5, 2026, 06_55_18 PM.png" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/Image/ChatGPT Image Feb 5, 2026, 06_55_18 PM.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/Image/Gemini_Generated_Image_ijeznaijeznaijez.png" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/Image/Gemini_Generated_Image_ijeznaijeznaijez.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/Image/ade94889319475e835f26231f1e490dd.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/Image/ade94889319475e835f26231f1e490dd.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/Image/e603370ca564224f017fa54ba459955a.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/Image/e603370ca564224f017fa54ba459955a.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/FX/src/main/resources/Image/logo-pornhub-inkythuatso-21-15-41-06.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/FX/src/main/resources/Image/logo-pornhub-inkythuatso-21-15-41-06.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/IdeaProjects/JavaFXtutorials/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/JavaFXtutorials/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;RomanKhanh&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/RomanKhanh/Task-Management-System-Project&quot;,
+    &quot;accountId&quot;: &quot;9cae2865-344d-41b8-bc1f-9479586cac9d&quot;
+  }
+}</component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="39LDQMQeyxsVzlVwRFqJ5PHSm86" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;Spring Boot.TaskManagementBackendApplication.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Study/TKPM/Project1&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="TaskManagementBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.tms.backend.TaskManagementBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3d43193d-8eaa-45a3-a7f3-f161253cdaaf" name="Changes" comment="" />
+      <created>1770466439895</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1770466439895</updated>
+      <workItem from="1770466441068" duration="1156000" />
+      <workItem from="1770474637833" duration="396000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
