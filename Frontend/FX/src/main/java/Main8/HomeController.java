@@ -19,7 +19,8 @@ public class HomeController {
             URL url = getClass().getResource("/FXML/" + fxml);
             System.out.println("URL: " + url);
 
-            Node node = FXMLLoader.load(url);
+            FXMLLoader loader = new FXMLLoader(url);
+            Node node = loader.load();
 
             contentArea.getChildren().clear();
             contentArea.getChildren().add(node);

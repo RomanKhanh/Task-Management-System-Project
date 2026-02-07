@@ -1,0 +1,8 @@
+.PJbutton:hover{
+    -fx-text-fill: #4CAF50;   /* đổi màu khi hover */
+    -fx-cursor: hand;
+}
+.STbutton:hover{
+    -fx-text-fill: #4CAF50;   /* đổi màu khi hover */
+    -fx-cursor: hand;
+}

@@ -6,26 +6,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17.0.12"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="Main8.HomeController"
-            prefHeight="400.0" prefWidth="600.0">
-    <HBox>
-        <VBox prefWidth="200" >
-
-            <Button text="Projects"
-                    onAction="#showProjects"/>
-
-            <Button text="Settings"
-                    onAction="#showSettings"/>
-
-        </VBox>
-
-        <!-- PHẦN BÊN PHẢI: NƠI ĐỔI GIAO DIỆN -->
-        <StackPane fx:id="contentArea"
-                   styleClass="content"
-                   HBox.hgrow="ALWAYS"/>
-
-    </HBox>
-
-</AnchorPane>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../CSS/Home.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main8.HomeController">
+   <top>
+      <Label text="User's Workspace" BorderPane.alignment="CENTER" />
+   </top>
+   <left>
+      <VBox prefHeight="379.0" prefWidth="77.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox onMouseClicked="#showProjects" prefHeight="29.0" prefWidth="73.0" styleClass="PJbutton">
+               <children>
+                  <Label text="📁 " />
+                  <Label text="Projects" />
+               </children>
+            </HBox>
+            <HBox onMouseClicked="#showSettings" prefHeight="23.0" prefWidth="77.0" styleClass="STbutton">
+               <children>
+                  <Label text="⚙ " />
+                  <Label text="Settings" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <StackPane fx:id="contentArea" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
