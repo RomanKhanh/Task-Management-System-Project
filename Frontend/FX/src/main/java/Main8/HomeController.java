@@ -12,6 +12,12 @@ public class HomeController {
     @FXML
     private StackPane contentArea;
 
+    @FXML
+    public void initialize() {
+        // load dashboard mặc định khi mở app
+        loadUI("Dashboard.fxml");
+    }
+
     private void loadUI(String fxml) {
         try {
             System.out.println("Đang load file: " + fxml);
@@ -42,4 +48,7 @@ public class HomeController {
     private void showSettings() {
         loadUI("Settings.fxml");
     }
+
+    @FXML
+    private void showDashboard(){ loadUI("Dashboard.fxml");}
 }

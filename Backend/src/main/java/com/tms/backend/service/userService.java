@@ -20,13 +20,11 @@ public class userService {
     }
 
     public String login(String username, String password){
-//        for(User u : users){
-//            if (u.getUsername().equals(username)&&u.gerUserpassword().equals(password))
-//                return "Đăng nhập thành công";
-            if(username.equals("admin") && password.equals("123")) {
+        for(User u : users){
+            if (u.getUsername().equals(username)&&u.gerUserpassword().equals(password))
                 return "Đăng nhập thành công";
-            }
-//        }
+
+        }
 
         return "Đăng nhập thất bại";
 

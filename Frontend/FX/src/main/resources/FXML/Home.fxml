@@ -11,11 +11,17 @@
       <Label text="User's Workspace" BorderPane.alignment="CENTER" />
    </top>
    <left>
-      <VBox prefHeight="379.0" prefWidth="77.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="379.0" prefWidth="92.0" BorderPane.alignment="CENTER">
          <children>
+            <HBox onMouseClicked="#showDashboard" prefHeight="23.0" prefWidth="92.0" styleClass="DBbutton">
+               <children>
+                  <Label text="🏠" />
+                  <Label text="Dashboard" />
+               </children>
+            </HBox>
             <HBox onMouseClicked="#showProjects" prefHeight="29.0" prefWidth="73.0" styleClass="PJbutton">
                <children>
-                  <Label text="📁 " />
+                  <Label text="📁" />
                   <Label text="Projects" />
                </children>
             </HBox>
@@ -29,6 +35,40 @@
       </VBox>
    </left>
    <center>
-      <StackPane fx:id="contentArea" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <StackPane fx:id="contentArea" prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+<!--         <children>-->
+<!--            <VBox prefHeight="200.0" prefWidth="100.0">-->
+<!--               <children>-->
+<!--                  <Label styleClass="title" text="DASHBOARD" />-->
+<!--                  <HBox prefHeight="100.0" prefWidth="200.0">-->
+<!--                     <children>-->
+<!--                        <VBox styleClass="card" prefHeight="200.0" prefWidth="100.0">-->
+<!--                           <children>-->
+<!--                              <Label prefHeight="21.0" prefWidth="105.0" text="Total Tasks" />-->
+<!--                              <Label text="code" />-->
+<!--                           </children>-->
+<!--                        </VBox>-->
+<!--                        <VBox styleClass="card" prefHeight="100.0" prefWidth="123.0">-->
+<!--                           <children>-->
+<!--                              <Label text="In Progress" />-->
+<!--                              <Label text="code" />-->
+<!--                           </children>-->
+<!--                        </VBox>-->
+<!--                        <VBox styleClass="card" prefHeight="100.0" prefWidth="112.0">-->
+<!--                           <children>-->
+<!--                              <Label text="Completed" />-->
+<!--                              <Label text="code" />-->
+<!--                           </children>-->
+<!--                        </VBox>-->
+<!--                     </children>-->
+<!--                  </HBox>-->
+<!--                  <Label styleClass="section" text="Today's Task" />-->
+<!--                  <ListView prefHeight="200.0" prefWidth="200.0" />-->
+<!--                  <Label text="Recent Projects" />-->
+<!--                  <ListView styleClass="section" prefHeight="200.0" prefWidth="200.0" />-->
+<!--               </children>-->
+<!--            </VBox>-->
+<!--         </children>-->
+      </StackPane>
    </center>
 </BorderPane>

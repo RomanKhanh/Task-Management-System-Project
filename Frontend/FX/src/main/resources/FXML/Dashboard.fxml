@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="200.0" prefWidth="100.0">
+    <children>
+        <Label styleClass="title" text="DASHBOARD" />
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <VBox styleClass="card" prefHeight="200.0" prefWidth="100.0">
+                    <children>
+                        <Label prefHeight="21.0" prefWidth="105.0" text="Total Tasks" />
+                        <Label text="code" />
+                    </children>
+                </VBox>
+                <VBox styleClass="card" prefHeight="100.0" prefWidth="123.0">
+                    <children>
+                        <Label text="In Progress" />
+                        <Label text="code" />
+                    </children>
+                </VBox>
+                <VBox styleClass="card" prefHeight="100.0" prefWidth="112.0">
+                    <children>
+                        <Label text="Completed" />
+                        <Label text="code" />
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Label styleClass="section" text="Today's Task" />
+        <ListView prefHeight="200.0" prefWidth="200.0" />
+        <Label text="Recent Projects" />
+        <ListView styleClass="section" prefHeight="200.0" prefWidth="200.0" />
+    </children>
+</VBox>
