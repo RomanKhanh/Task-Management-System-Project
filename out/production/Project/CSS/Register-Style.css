@@ -1,0 +1,58 @@
+.AnchorPane-style {
+    -fx-background-image: url("../Image/ade94889319475e835f26231f1e490dd.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+}
+
+.Register-box {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #FFF;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 4);
+}
+.Register-Content {
+
+}
+.Label-DK {
+    -fx-font-weight: bold;
+    -fx-font-size: 20;
+}
+.VBox-Fields {
+    -fx-spacing: 12;
+}
+
+.my-button {
+    -fx-background-color: #90ee90;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 10;
+    -fx-pref-height: 30px;
+    -fx-cursor: hand;
+}
+
+.my-button:hover {
+    -fx-background-color: #7cfc00;
+}
+
+.my-button:pressed {
+    -fx-background-color: #0D47A1;
+}
+
+.Fake {
+    -fx-border-color: #666;
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 4 8 4 8;
+    -fx-spacing: 8;
+}
+
+.Field {
+    -fx-border-color: transparent;
+    -fx-background-color: white;
+    -fx-font-size: 14px;
+    -fx-pref-height: 28px;
+}

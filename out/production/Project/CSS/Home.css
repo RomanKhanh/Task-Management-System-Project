@@ -1,0 +1,37 @@
+.DBbutton:hover{
+    -fx-cursor: hand;
+}
+.DBbutton:hover .label{
+    -fx-text-fill: #4CAF50;
+}
+.PJbutton:hover{
+    -fx-cursor: hand;
+}
+.PJbutton:hover .label{
+    -fx-text-fill: #4CAF50;   /* đổi màu khi hover */
+
+}
+.STbutton:hover{
+
+    -fx-cursor: hand;
+}
+
+.STbutton:hover .label{
+    -fx-text-fill: #4CAF50;   /* đổi màu khi hover */
+
+}
+.title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+.card {
+    -fx-background-color: white;
+    -fx-padding: 15;
+    -fx-border-color: #ddd;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+.section {
+    -fx-padding: 20;
+    -fx-spacing: 20;
+}
