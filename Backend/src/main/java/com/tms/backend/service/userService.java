@@ -7,9 +7,9 @@ import java.util.List;
 
 @Service
 public class userService {
-    private static List<User> users = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
 
-    public static String register(String username, String password) {
+    public String register(String username, String password) {
         for (User u : users) {
             if (u.getUsername().equals(username)) {
                 return "Username đã tồn tại";
