@@ -13,11 +13,10 @@ public class AuthController {
         this.UserService = UserService;
     }
 
-    @PostMapping("/register")
-    public String register(
-            @RequestParam String username,
-            @RequestParam String password) {
-        return UserService.register(username, password);
+    @PostMapping("/register") // Phải là Post để khớp với JavaFX
+    public String register(@RequestBody com.tms.backend.entity.User user) {
+        // Dùng @RequestBody để nhận cục JSON từ JavaFX gửi sang
+        return userService.register(user.getUsername(), user.gerUserpassword());
     }
 
     @GetMapping("/login")

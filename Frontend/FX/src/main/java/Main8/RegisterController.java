@@ -23,25 +23,44 @@ public class RegisterController {
 
     @FXML
     private void handleRegister() {
-        String user = this.preUser.getText();
-        String pass = this.prePass.getText();
-        String confirmPass = this.ConformedPass.getText();
-        if (!user.isEmpty() && !pass.isEmpty() && !confirmPass.isEmpty()) {
-            if (!pass.equals(confirmPass)) {
-                this.showAlert("Lỗi", "Mật khẩu xác nhận không khớp!");
-            } else {
-                this.showAlert("Thành công", "Đăng ký tài khoản thành công!");
-                String jsonPayload = String.format("{\"username\":\"%s\", \"password\":\"%s\"}", user, pass);
-                HttpClient client = HttpClient.newHttpClient();
-                HttpRequest request = HttpRequest.newBuilder().uri(URI.create("http://localhost:8080/api/register")).header("Content-Type", "application/json").POST(BodyPublishers.ofString(jsonPayload)).build();
-                client.sendAsync(request, BodyHandlers.ofString()).thenApply(HttpResponse::body).thenAccept((result) -> Platform.runLater(() -> this.showAlert("Thông báo", result))).exceptionally((ex) -> {
-                    Platform.runLater(() -> this.showAlert("Lỗi", "Không kết nối được Backend!"));
+        String user = preUser.getText();
+        String pass = prePass.getText();
+        String confirmPass = ConformedPass.getText();
+
+        if (user.isEmpty() || pass.isEmpty() || confirmPass.isEmpty()) {
+            showAlert("Lỗi", "Vui lòng nhập đầy đủ thông tin!");
+            return;
+        }
+
+        if (!pass.equals(confirmPass)) {
+            showAlert("Lỗi", "Mật khẩu xác nhận không khớp!");
+            return;
+        }
+
+        // --- PHẦN KẾT NỐI VỚI SPRING BOOT ---
+        // 1. Đóng gói JSON
+        String jsonPayload = String.format("{\"username\":\"%s\", \"password\":\"%s\"}", user, pass);
+
+        // 2. Gửi lệnh POST lên Backend
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/api/register"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(jsonPayload))
+                .build();
+
+        // 3. Nhận phản hồi
+        client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+                .thenApply(HttpResponse::body)
+                .thenAccept(result -> {
+                    javafx.application.Platform.runLater(() -> {
+                        showAlert("Thông báo", result);
+                    });
+                })
+                .exceptionally(ex -> {
+                    javafx.application.Platform.runLater(() -> showAlert("Lỗi", "Không kết nối được Backend!"));
                     return null;
                 });
-            }
-        } else {
-            this.showAlert("Lỗi", "Vui lòng nhập đầy đủ thông tin!");
-        }
     }
 
     private void showAlert(String title, String content) {
