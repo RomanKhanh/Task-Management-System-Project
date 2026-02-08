@@ -67,6 +67,7 @@ public class loginController {
 
     private void openHomeForm() {
         try {
+
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Home.fxml"));
             Parent root = loader.load();
             Stage current = (Stage) lblHome.getScene().getWindow();
