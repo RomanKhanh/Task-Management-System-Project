@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="622.0" prefWidth="965.0"
+            styleClass="AnchorPane-style"
+            stylesheets="@../CSS/Register-Style.css"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Main8.RegisterController">
+
+    <children>
+
+        <HBox alignment="CENTER"
+              AnchorPane.topAnchor="0"
+              AnchorPane.bottomAnchor="0"
+              AnchorPane.leftAnchor="0"
+              AnchorPane.rightAnchor="0">
+
+            <StackPane prefWidth="500">
+
+                <VBox alignment="CENTER"
+                      maxHeight="350"
+                      maxWidth="400"
+                      styleClass="Register-box">
+
+                    <VBox alignment="CENTER"
+                          spacing="20"
+                          styleClass="Register-Content">
+
+                        <Label text="ĐĂNG KÝ TÀI KHOẢN"
+                               styleClass="Label-DK"/>
+
+                        <VBox spacing="10"
+                              styleClass="VBox-Fields">
+
+                            <HBox alignment="CENTER_LEFT" styleClass="Fake">
+                                <Label text="👤"/>
+                                <TextField fx:id="preUser" prefHeight="31.0" prefWidth="283.0"
+                                           promptText="Email hoặc số điện thoại" styleClass="Field"/>
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" styleClass="Fake">
+                                <Label text="🔒"/>
+                                <PasswordField fx:id="prePass" prefHeight="31.0" prefWidth="285.0"
+                                               promptText="Mật Khẩu" styleClass="Field"/>
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" styleClass="Fake">
+                                <Label text="🔒"/>
+                                <PasswordField fx:id="ConformedPass" prefHeight="31.0" prefWidth="285.0"
+                                               promptText="Xác nhận lại mật khẩu" styleClass="Field"/>
+                            </HBox>
+
+                        </VBox>
+
+                        <Button text="Xác nhận"
+                                styleClass="my-button" onAction="#handleRegister" />
+                    </VBox>
+
+                </VBox>
+
+            </StackPane>
+
+        </HBox>
+
+    </children>
+</AnchorPane>
