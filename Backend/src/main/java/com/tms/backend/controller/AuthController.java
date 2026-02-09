@@ -1,5 +1,6 @@
 package com.tms.backend.controller;
 
+import com.tms.backend.entity.User;
 import com.tms.backend.service.userService;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,10 +15,8 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public String register(
-            @RequestParam String username,
-            @RequestParam String password) {
-        return UserService.register(username, password);
+    public String register(@RequestBody User user) {
+        return userService.register(user.getUsername(), user.gerUserpassword());
     }
 
     @GetMapping("/login")
