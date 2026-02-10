@@ -1,11 +1,15 @@
 package com.tms.backend.controller;
+import java.util.Map;
 
 import com.tms.backend.entity.User;
 import com.tms.backend.service.userService;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.ResponseEntity;
+
+import java.sql.SQLException;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/auth")
 public class AuthController {
 
     private final userService UserService;
@@ -15,14 +19,23 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public String register(@RequestBody User user) {
-        return userService.register(user.getUsername(), user.gerUserpassword());
+    public String register(@RequestParam String username,
+                           @RequestParam String password) {
+        return userService.register(username, password);
     }
 
-    @GetMapping("/login")
-    public String login(
-            @RequestParam String username,
-            @RequestParam String password) {
-        return UserService.login(username,password);
-    }
-}
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody Map<String, String> data) {
+        String username = data.get("username");
+        String password = data.get("password");
+
+        boolean ok = userService.login(username, password);
+
+        if (ok) {
+            return ResponseEntity.ok("Đăng nhập thành công");
+        } else {
+            return ResponseEntity.status(401).body("Sai tài khoản hoặc mật khẩu");
+        }
+    }}
+
+

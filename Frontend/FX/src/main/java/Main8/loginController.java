@@ -11,6 +11,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import javafx.scene.control.TextField;
 import javafx.scene.control.PasswordField;
+import javafx.application.Platform;
 
 import java.net.URI;
 public class loginController {
@@ -85,42 +86,55 @@ public class loginController {
     }
 
 
+
+    private void showAlert(String title, String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+
     @FXML
     private void handleLogin() {
-        String username = txtUser.getText();
-        String password = txtPass.getText();
+        String user = txtUser.getText();
+        String pass = txtPass.getText();
 
-        try {
-            String url = "http://localhost:8080/api/login"
-                    + "?username=" + username
-                    + "&password=" + password;
-
-            HttpClient client = HttpClient.newHttpClient();
-
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(url))
-                    .GET()
-                    .build();
-
-            HttpResponse<String> response =
-                    client.send(request, HttpResponse.BodyHandlers.ofString());
-
-            System.out.println("RESPONSE = [" + response.body() + "]");
-
-            if (response.body().toLowerCase().contains("thành công")) {
-                openHomeForm();
-            } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Lỗi đăng nhập");
-                alert.setHeaderText(null);
-                alert.setContentText("Sai tài khoản hoặc mật khẩu");
-                alert.show();
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+        if (user.isEmpty() || pass.isEmpty()) {
+            showAlert("Lỗi", "Vui lòng nhập đầy đủ thông tin");
+            return;
         }
+
+        String json = String.format(
+                "{\"username\":\"%s\",\"password\":\"%s\"}", user, pass
+        );
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://localhost:8080/api/auth/login"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        HttpClient.newHttpClient()
+                .sendAsync(request, HttpResponse.BodyHandlers.ofString())
+                .thenAccept(res -> {
+                    Platform.runLater(() -> {
+                        if (res.statusCode() == 200) {
+                            showAlert("OK", "Đăng nhập thành công");
+                            openHomeForm();
+                        } else {
+                            showAlert("Lỗi", res.body());
+                        }
+                    });
+                })
+                .exceptionally(ex -> {
+                    Platform.runLater(() ->
+                            showAlert("Lỗi", "Không kết nối được Backend")
+                    );
+                    return null;
+                });
     }
+
 
 
 }
