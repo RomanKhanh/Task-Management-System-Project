@@ -1,5 +1,6 @@
 package com.tms.backend.dao;
 
+import com.tms.backend.DB.DBConnection;
 import com.tms.backend.DB.TaskConnection;
 import com.tms.backend.entity.Project;
 import com.tms.backend.entity.Task;
@@ -17,8 +18,8 @@ import java.util.List;
 @Repository
 public class taskDAO {
     public boolean insert(String nametask, String projectname, String assignee, LocalDate deadline, String status) throws SQLException {
-        String sql = "INSERT INTO tasks (name, project, assignee, deadline, status) VALUES (?, ?, ?, ?, ?)";
-        try(Connection conn = TaskConnection.getConnection();
+        String sql = "INSERT INTO Tasks (name, project, assignee, deadline, status) VALUES (?, ?, ?, ?, ?)";
+        try(Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql))
         {
             ps.setString(1,nametask);
@@ -35,8 +36,8 @@ public class taskDAO {
     }
     public List<Task> getAllTask(){
         List<Task> task = new ArrayList<>();
-        String sql = "SELECT id, name, project, assignee, deadline, status FROM tasks";
-        try(Connection conn = TaskConnection.getConnection();
+        String sql = "SELECT id, name, project, assignee, deadline, status FROM Tasks";
+        try(Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);) {
             ResultSet rs = ps.executeQuery();
             while(rs.next()){

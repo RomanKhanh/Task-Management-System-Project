@@ -233,69 +233,50 @@ BEGIN
 END
 GO
 
-/* ===============================
-   CREATE DATABASE
-================================= */
 CREATE DATABASE TaskManagement;
 GO
 
 USE TaskManagement;
 GO
 
-/* ===============================
+/* =========================
    USERS TABLE
-================================= */
+========================= */
 CREATE TABLE Users (
-                       user_id INT IDENTITY(1,1) PRIMARY KEY,
+                       id INT IDENTITY(1,1) PRIMARY KEY,
                        username VARCHAR(50) NOT NULL UNIQUE,
-                       password VARCHAR(100) NOT NULL,
-                       role VARCHAR(20) NOT NULL
-                           CHECK (role IN ('Admin','Manager','Member'))
+                       password VARCHAR(50) NOT NULL,
+                       role VARCHAR(20)
 );
 GO
 
-/* ===============================
+/* =========================
    PROJECTS TABLE
-================================= */
+========================= */
 CREATE TABLE Projects (
-                          project_id INT IDENTITY(1,1) PRIMARY KEY,
+                          id INT IDENTITY(1,1) PRIMARY KEY,
                           name NVARCHAR(100) NOT NULL,
-                          description NVARCHAR(255),
-                          manager_id INT,
-                          status VARCHAR(20) DEFAULT 'Active',
-
-                          CONSTRAINT FK_Project_Manager
-                              FOREIGN KEY (manager_id)
-                                  REFERENCES Users(user_id)
+                          manager NVARCHAR(100),
+                          status VARCHAR(20)
 );
 GO
 
-/* ===============================
+/* =========================
    TASKS TABLE
-================================= */
+========================= */
 CREATE TABLE Tasks (
-                       task_id INT IDENTITY(1,1) PRIMARY KEY,
-                       title NVARCHAR(150) NOT NULL,
-                       description NVARCHAR(255),
-                       status VARCHAR(20) NOT NULL
-                           CHECK (status IN ('To Do','In Progress','Done','Cancel')),
+                       id INT IDENTITY(1,1) PRIMARY KEY,
+                       name NVARCHAR(100) NOT NULL,
+                       project NVARCHAR(100),
+                       assignee NVARCHAR(100),
                        deadline DATE,
-                       project_id INT,
-                       assignee_id INT,
-
-                       CONSTRAINT FK_Task_Project
-                           FOREIGN KEY (project_id)
-                               REFERENCES Projects(project_id),
-
-                       CONSTRAINT FK_Task_Assignee
-                           FOREIGN KEY (assignee_id)
-                               REFERENCES Users(user_id)
+                       status VARCHAR(20)
 );
 GO
 
-/* ===============================
-   INSERT SAMPLE DATA
-================================= */
+/* =========================
+   SAMPLE DATA
+========================= */
 
 -- Users
 INSERT INTO Users(username,password,role) VALUES
@@ -305,12 +286,13 @@ INSERT INTO Users(username,password,role) VALUES
 ('member2','123','Member');
 
 -- Projects
-INSERT INTO Projects(name,description,manager_id,status) VALUES
-    ('Demo Project','Project test hệ thống',2,'Active');
+INSERT INTO Projects(name, manager, status) VALUES
+                                                ('Demo Project','admin','Active'),
+                                                ('Website Project','manager1','Active');
 
 -- Tasks
-INSERT INTO Tasks(title,description,status,deadline,project_id,assignee_id) VALUES
-                                                                                ('Thiết kế UI','Làm giao diện JavaFX','To Do','2026-02-25',1,3),
-                                                                                ('Viết backend','Xử lý database','In Progress','2026-02-28',1,4),
-                                                                                ('Test hệ thống','Kiểm thử toàn bộ','Done','2026-02-20',1,3);
+INSERT INTO Tasks(name, project, assignee, deadline, status) VALUES
+                                                                 ('Thiết kế UI','Demo Project','member1','2026-02-25','To Do'),
+                                                                 ('Viết backend','Demo Project','member2','2026-02-28','In Progress'),
+                                                                 ('Test hệ thống','Website Project','member1','2026-02-20','Done');
 GO

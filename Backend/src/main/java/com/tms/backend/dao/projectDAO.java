@@ -1,5 +1,6 @@
 package com.tms.backend.dao;
 
+import com.tms.backend.DB.DBConnection;
 import com.tms.backend.DB.ProjectConnection;
 import com.tms.backend.entity.Project;
 import org.springframework.stereotype.Repository;
@@ -14,8 +15,8 @@ import java.util.List;
 @Repository
 public class projectDAO {
     public boolean insert(String name, String manager, String status){
-        String sql = "INSERT INTO projects (name, manager, status) VALUES (?, ?, ?)";
-        try(Connection conn = ProjectConnection.getConnection();
+        String sql = "INSERT INTO Projects (name, manager, status) VALUES (?, ?, ?)";
+        try(Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
         ) {
             ps.setString(1,name);
@@ -29,8 +30,8 @@ public class projectDAO {
         }
     }
     public boolean edit(int id, String name, String manager, String status){
-        String sql = "UPDATE projects SET name=?, manager=?, status=? WHERE id=?";
-        try(Connection conn = ProjectConnection.getConnection();
+        String sql = "UPDATE Projects SET name=?, manager=?, status=? WHERE id=?";
+        try(Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);){
 
 
@@ -47,8 +48,8 @@ public class projectDAO {
     }
 
     public boolean delete(int id){
-        String sql = "DELETE FROM projects WHERE id=?";
-        try(Connection conn = ProjectConnection.getConnection();
+        String sql = "DELETE FROM Projects WHERE id=?";
+        try(Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ) {
             ps.setInt(1,id);
@@ -62,8 +63,8 @@ public class projectDAO {
 
     public List<Project> getAllProjects(){
         List<Project> list = new ArrayList<>();
-        String sql = "SELECT id, name, manager, status FROM projects";
-        try(Connection conn = ProjectConnection.getConnection();
+        String sql = "SELECT id, name, manager, status FROM Projects";
+        try(Connection conn = DBConnection.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);) {
             ResultSet rs = ps.executeQuery();
             while(rs.next()) {
