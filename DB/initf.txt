@@ -1,0 +1,94 @@
+/* =========================================
+   CREATE DATABASE
+========================================= */
+
+IF DB_ID('TaskManagement') IS NOT NULL
+DROP DATABASE TaskManagement
+GO
+
+CREATE DATABASE TaskManagement
+GO
+
+USE TaskManagement
+GO
+
+/* =========================================
+   TABLE: Users
+========================================= */
+
+CREATE TABLE dbo.Users (
+    user_id INT IDENTITY(1,1) PRIMARY KEY,
+    username VARCHAR(40) NOT NULL UNIQUE,
+    password VARCHAR(40) NOT NULL,
+    role VARCHAR(20) CHECK (role IN ('Member','Manager','Admin'))
+)
+GO
+
+/* =========================================
+   TABLE: Projects
+========================================= */
+
+CREATE TABLE dbo.Projects (
+    project_id INT IDENTITY(1,1) PRIMARY KEY,
+    projectname NVARCHAR(100),
+    description NVARCHAR(255),
+    manager_id INT,
+    CONSTRAINT FK_Project_Manager 
+        FOREIGN KEY (manager_id) 
+        REFERENCES dbo.Users(user_id)
+)
+GO
+
+/* =========================================
+   TABLE: Tasks
+========================================= */
+
+CREATE TABLE dbo.Tasks (
+    task_id INT IDENTITY(1,1) PRIMARY KEY,
+    title NVARCHAR(100),
+    status VARCHAR(20) CHECK (status IN ('Cancel','Done','In Progress','To Do')),
+    deadline DATE,
+    project_id INT,
+    assignee_id INT,
+    CONSTRAINT FK_Task_Project 
+        FOREIGN KEY (project_id) 
+        REFERENCES dbo.Projects(project_id),
+    CONSTRAINT FK_Task_Assignee 
+        FOREIGN KEY (assignee_id) 
+        REFERENCES dbo.Users(user_id)
+)
+GO
+
+/* =========================================
+   INSERT SAMPLE DATA
+========================================= */
+
+-- Users
+SET IDENTITY_INSERT dbo.Users ON
+
+INSERT INTO dbo.Users (user_id, username, password, role) VALUES
+(1, 'admin', '123', 'Admin'),
+(3, 'a', 'a', 'Member'),
+(5, 'g', 'g', 'Member'),
+(7, 'f', 'f', 'Member')
+
+SET IDENTITY_INSERT dbo.Users OFF
+GO
+
+-- Projects
+SET IDENTITY_INSERT dbo.Projects ON
+
+INSERT INTO dbo.Projects (project_id, projectname, description, manager_id)
+VALUES (1, 'Demo Project', 'Test project', 1)
+
+SET IDENTITY_INSERT dbo.Projects OFF
+GO
+
+-- Tasks
+SET IDENTITY_INSERT dbo.Tasks ON
+
+INSERT INTO dbo.Tasks (task_id, title, status, deadline, project_id, assignee_id)
+VALUES (1, 'Task 1', 'To Do', '2026-02-15', 1, 1)
+
+SET IDENTITY_INSERT dbo.Tasks OFF
+GO
