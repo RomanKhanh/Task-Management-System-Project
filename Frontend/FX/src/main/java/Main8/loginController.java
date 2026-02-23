@@ -120,6 +120,7 @@ public class loginController {
                 .thenAccept(res -> {
                     Platform.runLater(() -> {
                         if (res.statusCode() == 200) {
+                            Session.setCurrentUsername(user);
                             showAlert("OK", "Đăng nhập thành công");
                             openHomeForm();
                         } else {

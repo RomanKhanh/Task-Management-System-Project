@@ -1,0 +1,174 @@
+/* ======================
+   ROOT
+====================== */
+
+.root {
+
+    -fx-background-color: #f4f6f8;
+
+    -fx-font-family: "Segoe UI";
+}
+
+
+/* ======================
+   LEFT SIDEBAR
+====================== */
+
+.border-pane > .left {
+
+    -fx-background-color: white;
+
+    -fx-padding: 15;
+
+    -fx-border-color: #e0e0e0;
+
+    -fx-border-width: 0 1 0 0;
+}
+
+.border-pane > .left VBox {
+
+    -fx-spacing: 10;
+}
+
+
+/* ======================
+   CENTER AREA
+====================== */
+
+.border-pane > .center {
+
+    -fx-padding: 20;
+}
+
+
+/* ======================
+   LABEL TITLES
+====================== */
+
+.label {
+
+    -fx-font-size: 13px;
+}
+
+
+
+
+/* ======================
+   TABPANE
+====================== */
+
+.tab-pane {
+
+    -fx-background-color: white;
+
+    -fx-border-color: #e0e0e0;
+
+    -fx-border-radius: 6;
+
+    -fx-background-radius: 6;
+}
+
+.tab-pane .tab {
+
+    -fx-background-color: #e9ecef;
+
+    -fx-padding: 5 15 5 15;
+}
+
+.tab-pane .tab:selected {
+
+    -fx-background-color: white;
+
+    -fx-border-color: #e0e0e0;
+
+    -fx-border-width: 1 1 0 1;
+}
+
+
+/* ======================
+   ACCORDION
+====================== */
+
+.accordion {
+
+    -fx-background-color: white;
+}
+
+
+/* ======================
+   TITLED PANE
+====================== */
+
+.titled-pane {
+
+    -fx-background-color: white;
+}
+
+.titled-pane > .title {
+
+    -fx-background-color: #f1f3f5;
+
+    -fx-padding: 10;
+
+    -fx-font-weight: bold;
+
+    -fx-border-color: #e0e0e0;
+
+    -fx-border-width: 0 0 1 0;
+}
+
+.titled-pane > .title:hover {
+
+    -fx-background-color: #e3f2fd;
+}
+
+
+/* ======================
+   RIGHT COLUMN
+====================== */
+
+.border-pane > .center HBox > VBox {
+
+    -fx-spacing: 10;
+
+    -fx-padding: 10;
+}
+
+
+/* ======================
+   ICON STYLE
+====================== */
+
+.image-view {
+
+    -fx-opacity: 0.8;
+}
+
+
+/* ======================
+   SPACING FIX
+====================== */
+
+HBox {
+
+    -fx-spacing: 20;
+}
+
+VBox {
+
+    -fx-spacing: 5px;
+}
+
+.createtask{
+    -fx-cursor: hand;
+    -fx-background-color: black;
+    -fx-text-fill: white;
+}
+
+.menu{
+    -fx-border-color: black;      /* màu khung */
+    -fx-border-width: 2;          /* độ dày */
+    -fx-border-radius: 5;         /* bo góc */
+    -fx-padding: 10;
+    -fx-font-weight: bold;
+}

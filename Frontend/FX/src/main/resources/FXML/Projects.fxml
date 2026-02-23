@@ -6,13 +6,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx/8"
-      xmlns:fx="http://javafx.com/fxml/1"
-      alignment="CENTER"
-      spacing="10">
-
-    <Label text="Projects Screen"/>
-    <Button text="Add Project"/>
-
-</VBox>
-
+<BorderPane stylesheets="@../CSS/Project.css"   xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main8.ProjectsController">
+   <center>
+      <TableView  fx:id="projectTable"  BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colId"  text="ID" />
+          <TableColumn fx:id="colName"  text="Name" />
+            <TableColumn fx:id="colManager"  text="Owner" />
+            <TableColumn fx:id="colStatus"  text="Status" />
+        </columns>
+      </TableView>
+   </center>
+   <top>
+      <VBox  alignment="CENTER" >
+         <children>
+            <Label text="Projects Management" />
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button styleClass="create" mnemonicParsing="false" onAction="#handleCreateProject" text="Create Project" />
+                  <Button styleClass="edit" mnemonicParsing="false" onAction="#handleEditProject" text="Edit" />
+                  <Button styleClass="delete" mnemonicParsing="false" onAction="#handleDeleteProject" text="Delete" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+</BorderPane>

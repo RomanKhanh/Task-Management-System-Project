@@ -51,4 +51,7 @@ public class HomeController {
 
     @FXML
     private void showDashboard(){ loadUI("Dashboard.fxml");}
+
+    @FXML
+    private void showTask(){ loadUI("Task.fxml");}
 }

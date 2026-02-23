@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane fx:controller="Main8.TaskController" stylesheets="@../CSS/Task.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <VBox styleClass="menu" BorderPane.alignment="CENTER">
+         <children>
+            <HBox>
+               <children>
+                   <ImageView fitHeight="20" fitWidth="20">
+                       <image>
+                           <Image url="@../Image/icons8-task-50.png" />
+                       </image>
+                   </ImageView>
+                  <Label text="My Tasks" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                   <ImageView fitHeight="20" fitWidth="20">
+                       <image>
+                           <Image url="@../Image/icons8-deadline-64.png" />
+                       </image>
+                   </ImageView>
+                  <Label text="Today &amp; Overdue" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                   <ImageView fitHeight="20" fitWidth="20">
+                       <image>
+                           <Image url="@../Image/icons8-assign-24.png" />
+                       </image>
+                   </ImageView>
+                  <Label text="Assigned to me" />
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                   <ImageView fitHeight="20" fitWidth="20">
+                       <image>
+                           <Image url="@../Image/icons8-list-view-50.png" />
+                       </image>
+                   </ImageView>
+                  <Label text="Personal List" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Recent" />
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="My Work" />
+                  <TabPane tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                    <tabs>
+                      <Tab text="To do">
+                           <content>
+                              <Accordion VBox.vgrow="ALWAYS">
+                                <panes>
+                                  <TitledPane fx:id="todayPane" animated="false" text="Today" />
+                                  <TitledPane fx:id="overduePane" animated="false" text="Overdue" />
+                                  <TitledPane fx:id="nextPane" animated="false" text="Next" />
+                                    <TitledPane fx:id="unscheduledPane" animated="false" text="Unscheduled" />
+                                </panes>
+                              </Accordion>
+                           </content>
+                      </Tab>
+                      <Tab text="Done">
+                          <content>
+                              <VBox fx:id="doneContainer" spacing="5"/>
+                          </content>
+                      </Tab>
+                        <Tab text="Delegated">
+                            <content>
+                                <VBox fx:id="cancelContainer" spacing="5"/>
+                            </content>
+                        </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="0" GridPane.columnIndex="1">
+               <children>
+                  <Label text="Assigned to me" />
+                  <Accordion VBox.vgrow="ALWAYS">
+                    <panes>
+                        <TitledPane fx:id="assignPane" animated="false" text="To Do" expanded="true">
+                            <content>
+                                <VBox fx:id="assignContainer" spacing="10"/>
+                            </content>
+                        </TitledPane>
+                    </panes>
+                  </Accordion>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Personal List" />
+                  <Label styleClass="createtask" onMouseClicked="#handleCreateTask" text="+ Create a Task" />
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </center>
+</BorderPane>

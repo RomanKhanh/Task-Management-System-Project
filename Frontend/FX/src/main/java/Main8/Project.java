@@ -1,0 +1,72 @@
+package Main8;
+
+public class Project {
+
+    private int id;
+    private String name;
+    private String manager;
+    private String status;
+
+    public Project(int id, String name, String manager, String status) {
+        this.id=id;
+        this.name = name;
+        this.manager = manager;
+        this.status = status;
+    }
+
+    public Project(int id, String name){
+        this.id=id;
+        this.name=name;
+    }
+    public Project( String name, String manager, String status) {
+
+        this.name = name;
+        this.manager = manager;
+        this.status = status;
+    }
+
+    public Project(String name){
+        this.name=name;
+    }
+
+
+
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getManager() {
+        return manager;
+    }
+
+    public void setManager(String manager) {
+        this.manager = manager;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString(){
+        return name;
+    }
+}

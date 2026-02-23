@@ -1,3 +1,21 @@
+.home{
+    -fx-spacing: 20px;
+}
+.menubar{
+    -fx-border-color: black;      /* màu khung */
+    -fx-border-width: 2;          /* độ dày */
+    -fx-border-radius: 5;         /* bo góc */
+    -fx-padding: 10;
+    -fx-font-weight: bold;
+}
+
+.stack{
+    -fx-border-color: black;      /* màu khung */
+    -fx-border-width: 2;          /* độ dày */
+    -fx-border-radius: 5;         /* bo góc */
+    -fx-padding: 10;
+}
+
 .DBbutton:hover{
     -fx-cursor: hand;
 }
@@ -10,6 +28,12 @@
 .PJbutton:hover .label{
     -fx-text-fill: #4CAF50;   /* đổi màu khi hover */
 
+}
+.Taskbutton:hover{
+    -fx-cursor: hand;
+}
+.Taskbutton:hover .label{
+    -fx-text-fill: #4CAF50;
 }
 .STbutton:hover{
 
