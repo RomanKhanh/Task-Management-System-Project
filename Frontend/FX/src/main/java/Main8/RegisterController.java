@@ -56,9 +56,35 @@ public class RegisterController {
 
         client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
                 .thenAccept(response -> {
-                    Platform.runLater(() ->
-                            showAlert("Thông báo", response.body())
-                    );
+                    Platform.runLater(() ->{
+
+                    if (response.statusCode() == 200) {
+                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                        alert.setTitle("Thông báo");
+                        alert.setHeaderText(null);
+                        alert.setContentText("Đăng ký thành công!");
+
+                        alert.showAndWait();
+                            try {
+                                FXMLLoader loader = new FXMLLoader(
+                                        getClass().getResource("/FXML/Login.fxml")
+                                );
+                                Parent root = loader.load();
+                                Stage stage = (Stage) preUser.getScene().getWindow();
+                                stage.getScene().setRoot(root);
+//                                Scene scene = stage.getScene();
+//                                scene.setRoot(root);
+                                stage.setMaximized(true);
+                                stage.setTitle("Login");
+
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            showAlert("Lỗi", response.body());
+                        }
+                });
 
                 })
                 .exceptionally(e -> {
