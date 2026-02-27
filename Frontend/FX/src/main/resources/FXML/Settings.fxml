@@ -6,12 +6,94 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx/8"
-      xmlns:fx="http://javafx.com/fxml/1"
-      alignment="CENTER"
-      spacing="10">
+<!--<VBox xmlns="http://javafx.com/javafx/8"-->
+<!--      xmlns:fx="http://javafx.com/fxml/1"-->
+<!--      fx:controller="Main8.SettingsController"-->
+<!--      alignment="CENTER"-->
+<!--      spacing="10">-->
 
-    <Label text="Settings Screen"/>
-    <Button text="Save Settings"/>
+<!--    <Label text="Change Password"/>-->
 
-</VBox>
+<!--    <PasswordField fx:id="oldPasswordField"-->
+<!--                   promptText="Old Password"/>-->
+
+<!--    <PasswordField fx:id="newPasswordField"-->
+<!--                   promptText="New Password"/>-->
+
+<!--    <PasswordField fx:id="confirmPasswordField"-->
+<!--                   promptText="Confirm Password"/>-->
+
+<!--    <Button text="Change Password"-->
+<!--            onAction="#handleChangePassword"/>-->
+
+<!--    <Label fx:id="messageLabel"/>-->
+
+<!--</VBox>-->
+
+<StackPane xmlns="http://javafx.com/javafx/8"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="Main8.SettingsController"
+           alignment="CENTER"
+           style="-fx-background-color: #f4f6f8;">
+
+    <!-- Card container -->
+    <VBox alignment="CENTER"
+          spacing="15"
+          maxWidth="350"
+          style="-fx-background-color: white;
+                 -fx-padding: 30;
+                 -fx-background-radius: 10;
+                 -fx-border-radius: 10;
+                 -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 15, 0, 0, 5);">
+
+        <!-- Title -->
+        <Label text="Change Password"
+               style="-fx-font-size: 20px;
+                      -fx-font-weight: bold;
+                      -fx-text-fill: #2c3e50;"/>
+
+        <!-- Old Password -->
+        <PasswordField fx:id="oldPasswordField"
+                       promptText="Old Password"
+                       prefWidth="250"
+                       style="-fx-padding: 8;
+                              -fx-background-radius: 5;
+                              -fx-border-radius: 5;
+                              -fx-border-color: #dcdcdc;"/>
+
+        <!-- New Password -->
+        <PasswordField fx:id="newPasswordField"
+                       promptText="New Password"
+                       prefWidth="250"
+                       style="-fx-padding: 8;
+                              -fx-background-radius: 5;
+                              -fx-border-radius: 5;
+                              -fx-border-color: #dcdcdc;"/>
+
+        <!-- Confirm Password -->
+        <PasswordField fx:id="confirmPasswordField"
+                       promptText="Confirm Password"
+                       prefWidth="250"
+                       style="-fx-padding: 8;
+                              -fx-background-radius: 5;
+                              -fx-border-radius: 5;
+                              -fx-border-color: #dcdcdc;"/>
+
+        <!-- Button -->
+        <Button text="Change Password"
+                onAction="#handleChangePassword"
+                prefWidth="250"
+                style="-fx-background-color: #3498db;
+                       -fx-text-fill: white;
+                       -fx-font-weight: bold;
+                       -fx-padding: 10;
+                       -fx-background-radius: 5;"/>
+
+        <!-- Message -->
+        <Label fx:id="messageLabel"
+               style="-fx-text-fill: red;
+                      -fx-font-size: 12px;"/>
+
+    </VBox>
+
+</StackPane>

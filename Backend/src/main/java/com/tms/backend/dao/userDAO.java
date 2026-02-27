@@ -71,4 +71,29 @@ public class userDAO {
         }
         return list;
     }
+    public boolean changePassword(String username,
+                                  String oldPassword,
+                                  String newPassword) {
+
+        try(Connection conn = DBConnection.getConnection()){
+
+            String sql = "UPDATE Users SET password=? WHERE username=? AND password=?";
+
+            PreparedStatement stmt = conn.prepareStatement(sql);
+
+            stmt.setString(1, newPassword);
+            stmt.setString(2, username);
+            stmt.setString(3, oldPassword);
+
+            int rows = stmt.executeUpdate();
+
+            return rows > 0;
+
+        }catch(Exception e){
+            e.printStackTrace();
+            return false;
+        }
+    }
 }
+
+

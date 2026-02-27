@@ -43,6 +43,23 @@ public class AuthController {
 
     @GetMapping("/all")
     public List<User> getAllUsers(){return UserService.getAllUsers();}
+
+    @PostMapping("/change-password")
+    public ResponseEntity<?> changePassword(@RequestBody Map<String, String> data){
+
+        String username = data.get("username");
+        String oldPassword = data.get("oldPassword");
+        String newPassword = data.get("newPassword");
+
+        boolean success = UserService.changePassword(username, oldPassword, newPassword);
+
+        if(success){
+            return ResponseEntity.ok("Success");
+        }
+        else{
+            return ResponseEntity.badRequest().body("Fail");
+        }
+    }
 }
 
 

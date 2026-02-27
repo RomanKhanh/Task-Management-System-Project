@@ -44,7 +44,9 @@ public class userService {
         List<User> list = userdao.getAllUsers();
         return list;
     }
-
+    public boolean changePassword(String username, String oldPassword, String newPassword) {
+        return userdao.changePassword(username, oldPassword, newPassword);
+    }
 }
 //public class userService {
 //    private static List<User> users = new ArrayList<>();

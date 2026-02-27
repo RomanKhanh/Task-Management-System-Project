@@ -54,20 +54,47 @@ public class RegisterController {
 
         HttpClient client = HttpClient.newHttpClient();
 
+
         client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
                 .thenAccept(response -> {
-                    Platform.runLater(() ->
-                            showAlert("Thông báo", response.body())
-                    );
+                    Platform.runLater(() -> {
 
+                        if (response.statusCode() == 200 || response.statusCode() == 201) {
+
+                            showAlert("Thành công", "Đăng ký thành công!");
+
+                            try {
+                                FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Login.fxml"));
+                                Parent root = loader.load();
+
+                                // Lấy stage hiện tại từ bất kỳ control nào
+                                Stage stage = (Stage) preUser.getScene().getWindow();
+                                stage.setTitle("Đăng nhập");
+                                stage.setScene(new Scene(root));
+                                stage.setFullScreen(true);
+                                stage.show();
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                                showAlert("Lỗi", "Không thể chuyển sang trang Login!");
+                            }
+
+                        } else {
+                            showAlert("Lỗi", response.body());
+                        }
+
+                    });
                 })
                 .exceptionally(e -> {
+                    e.printStackTrace();
                     Platform.runLater(() ->
                             showAlert("Lỗi", "Không kết nối được Backend!")
                     );
                     return null;
                 });
+
     }
+
 
 
     private void showAlert(String title, String content) {

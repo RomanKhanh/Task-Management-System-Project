@@ -1,0 +1,10 @@
+.password-field {
+    -fx-pref-width: 250;
+    -fx-pref-height: 35;
+    -fx-font-size: 14px;
+}
+
+.button {
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
