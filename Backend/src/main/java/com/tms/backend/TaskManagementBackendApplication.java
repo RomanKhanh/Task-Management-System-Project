@@ -1,5 +1,6 @@
 package com.tms.backend;
 
+import com.tms.backend.plugin.PluginLoader;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,6 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TaskManagementBackendApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(TaskManagementBackendApplication.class, args);
+        PluginLoader.loadPlugins("plugins");
+
     }
 }
