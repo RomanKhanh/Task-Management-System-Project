@@ -25,14 +25,24 @@ public class userService {
     public userService(userDAO userdao) {
         this.userdao = userdao;
     }
-
+    //-----------
     public String register(String username, String password) {
+
+        // 1️⃣ kiểm tra tài khoản đã tồn tại
+        if (userdao.existsByUsername(username)) {
+            return "Tài khoản đã tồn tại";
+        }
+
+        // 2️⃣ nếu chưa tồn tại → insert
         boolean success = userdao.insert(username, password);
+
         if (success) {
             return "Đăng ký thành công";
-        } else return "Đăng ký thất bại";
+        } else {
+            return "Đăng ký thất bại";
+        }
     }
-
+    //---------
     public boolean login(String username, String password) {
         User user = userdao.finduser(username, password);
         if(user!=null){
