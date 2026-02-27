@@ -10,7 +10,5 @@ public class TaskManagementBackendApplication {
     public static void main(String[] args) {
 
         SpringApplication.run(TaskManagementBackendApplication.class, args);
-        PluginLoader.loadPlugins("plugins");
-
     }
 }

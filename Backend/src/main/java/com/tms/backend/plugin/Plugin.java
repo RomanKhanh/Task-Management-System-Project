@@ -1,6 +1,6 @@
 package com.tms.backend.plugin;
 
 public interface Plugin {
-    String getName();
+    String name();
     void execute();
 }

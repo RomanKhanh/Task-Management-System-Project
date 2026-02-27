@@ -1,42 +1,32 @@
 package com.tms.backend.plugin;
 
-import java.io.File;
-import java.net.URL;
-import java.net.URLClassLoader;
-import java.util.ArrayList;
+import org.springframework.stereotype.Component;
 import java.util.List;
 
+@Component
 public class PluginLoader {
 
-    public static List<Plugin> loadPlugins(String path) {
-        List<Plugin> plugins = new ArrayList<>();
-        File dir = new File(path);
+    private final List<Plugin> plugins;
 
-        if (!dir.exists()) {
-            System.out.println("Plugin folder not found");
-            return plugins;
-        }
+    // Spring sẽ tự inject TẤT CẢ Plugin vào đây
+    public PluginLoader(List<Plugin> plugins) {
+        this.plugins = plugins;
+    }
 
-        File[] jars = dir.listFiles(f -> f.getName().endsWith(".jar"));
-        if (jars == null) return plugins;
-
-        for (File jar : jars) {
-            try {
-                URLClassLoader loader = new URLClassLoader(
-                        new URL[]{jar.toURI().toURL()},
-                        Plugin.class.getClassLoader()
-                );
-
-                Class<?> clazz = loader.loadClass("plugin.MainPlugin");
-                Plugin plugin = (Plugin) clazz.getDeclaredConstructor().newInstance();
-
-                plugins.add(plugin);
-                System.out.println("Loaded: " + plugin.getName());
-
-            } catch (Exception e) {
-                e.printStackTrace();
+    public void run(String pluginName) {
+        for (Plugin plugin : plugins) {
+            if (plugin.name().equalsIgnoreCase(pluginName)) {
+                plugin.execute();
+                return;
             }
         }
-        return plugins;
+
+        System.out.println("Khong tim thay plugin: " + pluginName);
+    }
+
+    // Debug: xem Spring load được plugin nào
+    public void listPlugins() {
+        System.out.println("===DANH SACH PLUGIN===");
+        plugins.forEach(p -> System.out.println("- " + p.name()));
     }
 }
