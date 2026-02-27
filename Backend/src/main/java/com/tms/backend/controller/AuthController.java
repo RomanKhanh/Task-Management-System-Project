@@ -15,8 +15,7 @@ import java.sql.SQLException;
 public class AuthController {
 
     private final userService UserService;
-
-
+    
     public AuthController(userService UserService) {
         this.UserService = UserService;
     }
