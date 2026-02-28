@@ -83,4 +83,39 @@ public class projectDAO {
         }
         return list;
     }
+    public static Project findById(int id) {
+        String sql = "SELECT * FROM Projects WHERE id = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return new Project(
+                        rs.getInt("id"),
+                        rs.getString("name"),
+                        rs.getString("manager"),
+                        rs.getString("status")
+                );
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static void update(Project project) {
+        String sql = "UPDATE Projects SET status=? WHERE id=?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+
+            ps.setString(1, project.getStatus());
+            ps.setInt(2, project.getId());
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

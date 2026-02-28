@@ -2,6 +2,7 @@ package com.tms.backend.service;
 
 import com.tms.backend.dao.projectDAO;
 import com.tms.backend.entity.Project;
+import com.tms.backend.plugin.notificationPlugin.PluginLoader;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -47,5 +48,16 @@ public class projectService {
     public List<Project> getAllProjects(){
         List<Project> list = ProjectDAO.getAllProjects();
         return list;
+    }
+    public static void updateStatus(int projectId, String newStatus) {
+
+        Project project = projectDAO.findById(projectId);
+        if (project == null) return;
+
+        project.setStatus(newStatus);
+        projectDAO.update(project);
+
+        // 🔔 chạy plugin
+        PluginLoader.run(project);
     }
 }
