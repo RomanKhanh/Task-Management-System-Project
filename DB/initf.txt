@@ -1,94 +1,51 @@
-/* =========================================
-   CREATE DATABASE
-========================================= */
-
 IF DB_ID('TaskManagement') IS NOT NULL
-DROP DATABASE TaskManagement
+    DROP DATABASE TaskManagement;
 GO
 
-CREATE DATABASE TaskManagement
+CREATE DATABASE TaskManagement;
 GO
 
-USE TaskManagement
+USE TaskManagement;
 GO
+CREATE TABLE Users (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    username NVARCHAR(50) NOT NULL UNIQUE,
+    password NVARCHAR(50) NOT NULL,
+    role NVARCHAR(20)
+);
 
-/* =========================================
-   TABLE: Users
-========================================= */
+CREATE TABLE Projects (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    name NVARCHAR(255) NOT NULL,
+    description NVARCHAR(500),
+    manager NVARCHAR(100) NOT NULL,
+    status NVARCHAR(50) NOT NULL
+);
 
-CREATE TABLE dbo.Users (
-    user_id INT IDENTITY(1,1) PRIMARY KEY,
-    username VARCHAR(40) NOT NULL UNIQUE,
-    password VARCHAR(40) NOT NULL,
-    role VARCHAR(20) CHECK (role IN ('Member','Manager','Admin'))
-)
-GO
-
-/* =========================================
-   TABLE: Projects
-========================================= */
-
-CREATE TABLE dbo.Projects (
-    project_id INT IDENTITY(1,1) PRIMARY KEY,
-    projectname NVARCHAR(100),
-    description NVARCHAR(255),
-    manager_id INT,
-    CONSTRAINT FK_Project_Manager 
-        FOREIGN KEY (manager_id) 
-        REFERENCES dbo.Users(user_id)
-)
-GO
-
-/* =========================================
-   TABLE: Tasks
-========================================= */
-
-CREATE TABLE dbo.Tasks (
-    task_id INT IDENTITY(1,1) PRIMARY KEY,
-    title NVARCHAR(100),
-    status VARCHAR(20) CHECK (status IN ('Cancel','Done','In Progress','To Do')),
+CREATE TABLE Tasks (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    name NVARCHAR(100) NOT NULL,
+    project NVARCHAR(100),
+    assignee NVARCHAR(100),
     deadline DATE,
-    project_id INT,
-    assignee_id INT,
-    CONSTRAINT FK_Task_Project 
-        FOREIGN KEY (project_id) 
-        REFERENCES dbo.Projects(project_id),
-    CONSTRAINT FK_Task_Assignee 
-        FOREIGN KEY (assignee_id) 
-        REFERENCES dbo.Users(user_id)
-)
-GO
+    status NVARCHAR(20)
+);
 
-/* =========================================
-   INSERT SAMPLE DATA
-========================================= */
+CREATE TABLE Notifications (
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    project_id INT NOT NULL,
+    receiver NVARCHAR(100) NOT NULL,
+    message NVARCHAR(255) NOT NULL,
+    is_read BIT DEFAULT 0,
+    created_at DATETIME DEFAULT GETDATE()
+);
+INSERT INTO Users(username,password,role) VALUES
+('admin','123','Admin'),
+('manager1','123','Manager'),
+('member1','123','Member');
 
--- Users
-SET IDENTITY_INSERT dbo.Users ON
+INSERT INTO Projects(name,description,manager,status) VALUES
+('Demo Project',NULL,'admin','On Hold');
 
-INSERT INTO dbo.Users (user_id, username, password, role) VALUES
-(1, 'admin', '123', 'Admin'),
-(3, 'a', 'a', 'Member'),
-(5, 'g', 'g', 'Member'),
-(7, 'f', 'f', 'Member')
-
-SET IDENTITY_INSERT dbo.Users OFF
-GO
-
--- Projects
-SET IDENTITY_INSERT dbo.Projects ON
-
-INSERT INTO dbo.Projects (project_id, projectname, description, manager_id)
-VALUES (1, 'Demo Project', 'Test project', 1)
-
-SET IDENTITY_INSERT dbo.Projects OFF
-GO
-
--- Tasks
-SET IDENTITY_INSERT dbo.Tasks ON
-
-INSERT INTO dbo.Tasks (task_id, title, status, deadline, project_id, assignee_id)
-VALUES (1, 'Task 1', 'To Do', '2026-02-15', 1, 1)
-
-SET IDENTITY_INSERT dbo.Tasks OFF
-GO
+INSERT INTO Tasks(name,project,assignee,deadline,status) VALUES
+('Thiết kế UI','Demo Project','member1','2026-02-25','To Do');

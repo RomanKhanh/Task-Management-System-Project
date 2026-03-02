@@ -1,6 +1,8 @@
 package com.tms.backend.plugin.notificationPlugin;
 
 import com.tms.backend.entity.Project;
+import com.tms.backend.plugin.Event;
+import com.tms.backend.plugin.Plugin;
 import com.tms.backend.plugin.ProjectPlugin;
 
 import java.util.ArrayList;
@@ -8,20 +10,19 @@ import java.util.List;
 
 public class PluginLoader {
 
-    private static final List<ProjectPlugin> plugins = new ArrayList<>();
+    private List<Plugin> plugins = new ArrayList<>();
 
-    static {
-        plugins.add(new com.tms.backend.plugin.notificationPlugin.NotificationPlugin());
-        System.out.println("Notification Plugin loaded");
+    public PluginLoader() {
+        loadPlugins();
     }
 
-    public static void run(Project project) {
+    private void loadPlugins() {
+        plugins.add(new NotificationPlugin());
+    }
 
-        System.out.println("PluginLoader.runPlugins CALLED");
-
-        for (ProjectPlugin plugin : plugins) {
-            System.out.println("Running plugin: " + plugin.getClass().getSimpleName());
-            plugin.onStatusChange(project);
+    public void run(Event event) {
+        for(Plugin plugin : plugins) {
+            plugin.execute(event);
         }
     }
 }
