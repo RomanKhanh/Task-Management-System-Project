@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { User, Project, Task, Subtask, Comment, Notification, TaskStatus } from '../types';
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uud';
 
 interface AppContextType {
   currentUser: User | null;
