@@ -13,7 +13,7 @@ export const Projects = () => {
 
   const canCreateProject = currentUser?.role === 'Admin' || currentUser?.role === 'Manager';
 
-  const handleCreateProject = (e: React.FormEvent) => {
+  const andleCreateProject = (e: React.FormEvent) => {
     e.preventDefault();
     if (newProjectName && currentUser) {
       addProject({
