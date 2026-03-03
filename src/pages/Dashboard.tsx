@@ -50,7 +50,7 @@ export const Dashboard = () => {
             {users.slice(0, 4).map((user) => (
               <img
                 key={user.id}
-                lassName="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+                className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
                 src={user.avatar}
                 alt={user.name}
               />
