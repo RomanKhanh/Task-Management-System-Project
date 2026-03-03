@@ -6,7 +6,7 @@ import { motion } from 'motion/react';
 
 const COLORS = ['#6366f1', '#f59e0b', '#10b981', '#ef4444'];
 
-export const Dashboard = () => {
+export const Dashboar = () => {
   const { tasks, projects, users } = useAppContext();
 
   const taskStats = [
