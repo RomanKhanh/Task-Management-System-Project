@@ -47,7 +47,7 @@ export const Dashboard = () => {
         </div>
         <div className="flex items-center gap-2 bg-white p-1.5 rounded-2xl border border-slate-200 shadow-sm">
           <div className="flex -space-x-2 overflow-hidden px-2">
-            {users.slice(0, 4).map((ser) => (
+            {users.slice(0, 4).map((user) => (
               <img
                 key={user.id}
                 className="inline-block h-8 w-8 rounded-full ring-2 ring-white"
