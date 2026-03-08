@@ -1,0 +1,10 @@
+Tai nodeJS
+Chay powershell voi admin 
+ghi cai lenh nay:
+	Set-ExecutionPolicy RemoteSigned
+	go Y
+Xong tat di kiem tra da cai chua bang lenh:
+	node -v
+Neu cai ok r nhan lenh:
+	npm install
+	npm rundev

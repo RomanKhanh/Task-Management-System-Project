@@ -1,0 +1,5 @@
+{
+  "name": "TaskFlow",
+  "description": "A team task management application with project tracking, kanban boards, and progress statistics.",
+  "requestFramePermissions": []
+}
