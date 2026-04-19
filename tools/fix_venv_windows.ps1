@@ -33,6 +33,11 @@ try {
         throw "No active virtual environment found. Activate your venv first (for example: .\venv\Scripts\Activate.ps1)."
     }
 
+    $pythonCommand = Get-Command python -ErrorAction SilentlyContinue
+    if (-not $pythonCommand) {
+        throw "python was not found in PATH for the active shell. Activate your venv and retry."
+    }
+
     $venvFromPython = (& python -c "import os, sys; print(os.path.abspath(sys.prefix))").Trim()
     if ($LASTEXITCODE -ne 0) {
         throw "Unable to query python from the current environment. Ensure venv is activated and python is available."

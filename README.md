@@ -34,8 +34,8 @@ ModuleNotFoundError: No module named 'pkg_resources'
 From your `stable-diffusion-webui` repository root, with your venv activated:
 
 ```powershell
-# replace with your own stable-diffusion-webui repository path
-cd C:\path\to\stable-diffusion-webui
+# example path (replace with your own repository path)
+cd $env:USERPROFILE\sd\stable-diffusion-webui
 .\venv\Scripts\Activate.ps1
 powershell -ExecutionPolicy Bypass -File .\tools\fix_venv_windows.ps1
 ```
@@ -51,8 +51,8 @@ The script will:
 Recreate the venv with Python 3.10 (Automatic1111 is tested with Python 3.10.x):
 
 ```powershell
-# replace with your own stable-diffusion-webui repository path
-cd C:\path\to\stable-diffusion-webui
+# example path (replace with your own repository path)
+cd $env:USERPROFILE\sd\stable-diffusion-webui
 deactivate
 Remove-Item -Recurse -Force .\venv
 py -3.10 -m venv .\venv
