@@ -20,7 +20,12 @@ function Invoke-Python {
 }
 
 try {
-    $repoRoot = Split-Path -Parent (Split-Path -Parent $PSCommandPath)
+    $scriptPath = if ($PSCommandPath) { $PSCommandPath } else { $MyInvocation.MyCommand.Path }
+    if (-not $scriptPath) {
+        throw "Could not resolve script path. Run this file directly (not from an anonymous shell block)."
+    }
+
+    $repoRoot = Split-Path -Parent (Split-Path -Parent $scriptPath)
     Set-Location $repoRoot
 
     Write-Step "Validating active virtual environment"
@@ -28,7 +33,7 @@ try {
         throw "No active virtual environment found. Activate your venv first (for example: .\venv\Scripts\Activate.ps1)."
     }
 
-    $venvFromPython = (& python -c "import os,sys; print(os.path.abspath(sys.prefix))").Trim()
+    $venvFromPython = (& python -c "import os, sys; print(os.path.abspath(sys.prefix))").Trim()
     if ($LASTEXITCODE -ne 0) {
         throw "Unable to query python from the current environment. Ensure venv is activated and python is available."
     }
