@@ -24,7 +24,7 @@ function Invoke-Python {
 }
 
 try {
-    $scriptPath = if ($PSCommandPath) { $PSCommandPath } else { $MyInvocation.MyCommand.Path }
+    $scriptPath = $PSCommandPath
     if (-not $scriptPath) {
         throw "Could not resolve script path. Run this file directly (not from an anonymous shell block)."
     }
@@ -48,7 +48,9 @@ try {
     }
 
     $activeVenv = [System.IO.Path]::GetFullPath($env:VIRTUAL_ENV)
-    if ($venvFromPython -ne $activeVenv) {
+    $activeVenvNormalized = $activeVenv.TrimEnd('\', '/')
+    $venvFromPythonNormalized = ([System.IO.Path]::GetFullPath($venvFromPython)).TrimEnd('\', '/')
+    if (-not ($venvFromPythonNormalized -ieq $activeVenvNormalized)) {
         throw "Active shell venv and python interpreter do not match.`nVIRTUAL_ENV: $activeVenv`nPython sys.prefix: $venvFromPython"
     }
 
