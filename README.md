@@ -23,7 +23,7 @@ View your app in AI Studio: https://ai.studio/apps/fb62bde9-2ef0-474c-9461-00d00
 
 If `launch.py` or `webui-user.bat` fails with missing `pkg_resources` / `setuptools` while installing CLIP, run the repair script in this repository.
 
-Relevant error snippet (from the provided PowerShell screenshot):
+Typical error message (matches the PowerShell screenshot in the issue report):
 
 ```text
 ModuleNotFoundError: No module named 'pkg_resources'
