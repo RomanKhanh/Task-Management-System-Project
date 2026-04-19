@@ -5,6 +5,7 @@
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
+$clipRepoUrl = "git+https://github.com/openai/CLIP.git"
 
 function Write-Step {
     param([string]$Message)
@@ -53,13 +54,14 @@ try {
 
     Write-Step "Repairing pip/setuptools toolchain in the venv"
     Invoke-Python -Args @("-m", "ensurepip", "--upgrade")
-    Invoke-Python -Args @("-m", "pip", "install", "--upgrade", "--force-reinstall", "pip", "setuptools", "wheel", "setuptools_scm", "build")
+    Invoke-Python -Args @("-m", "pip", "install", "--upgrade", "pip")
+    Invoke-Python -Args @("-m", "pip", "install", "--upgrade", "--force-reinstall", "setuptools", "wheel", "setuptools_scm", "build")
 
     Write-Step "Verifying pkg_resources import"
     Invoke-Python -Args @("-c", "import pkg_resources; print(pkg_resources.__file__)")
 
     Write-Step "Retrying CLIP install without build isolation"
-    Invoke-Python -Args @("-m", "pip", "install", "--upgrade", "--force-reinstall", "--no-build-isolation", "git+https://github.com/openai/CLIP.git")
+    Invoke-Python -Args @("-m", "pip", "install", "--upgrade", "--force-reinstall", "--no-build-isolation", $clipRepoUrl)
 
     Write-Step "Checking Visual C++ Build Tools availability"
     $cl = Get-Command cl.exe -ErrorAction SilentlyContinue

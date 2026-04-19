@@ -21,7 +21,10 @@ View your app in AI Studio: https://ai.studio/apps/fb62bde9-2ef0-474c-9461-00d00
 
 ## Troubleshooting (Windows / Automatic1111 stable-diffusion-webui)
 
-If `launch.py` or `webui-user.bat` fails with missing `pkg_resources` / `setuptools` while installing CLIP, place `tools/fix_venv_windows.ps1` in your `stable-diffusion-webui` repository (same repo that contains `webui-user.bat`) and run it there.
+If `launch.py` or `webui-user.bat` fails with missing `pkg_resources` / `setuptools` while installing CLIP:
+- create a `tools` folder inside your `stable-diffusion-webui` repository (same repo that contains `webui-user.bat`),
+- copy `fix_venv_windows.ps1` to `stable-diffusion-webui\tools\fix_venv_windows.ps1`,
+- then run it from the `stable-diffusion-webui` repository root.
 
 Typical error message (shown in the PowerShell screenshot):
 
