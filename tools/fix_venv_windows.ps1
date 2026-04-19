@@ -1,3 +1,7 @@
+param(
+    [string]$ClipRepoUrl = "git+https://github.com/openai/CLIP.git"
+)
+
 # Requires PowerShell 5+
 # Run from repository root after activating your venv:
 #   .\venv\Scripts\Activate.ps1
@@ -5,7 +9,6 @@
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
-$clipRepoUrl = "git+https://github.com/openai/CLIP.git"
 
 function Write-Step {
     param([string]$Message)
@@ -61,7 +64,7 @@ try {
     Invoke-Python -Args @("-c", "import pkg_resources; print(pkg_resources.__file__)")
 
     Write-Step "Retrying CLIP install without build isolation"
-    Invoke-Python -Args @("-m", "pip", "install", "--upgrade", "--force-reinstall", "--no-build-isolation", $clipRepoUrl)
+    Invoke-Python -Args @("-m", "pip", "install", "--upgrade", "--force-reinstall", "--no-build-isolation", $ClipRepoUrl)
 
     Write-Step "Checking Visual C++ Build Tools availability"
     $cl = Get-Command cl.exe -ErrorAction SilentlyContinue
